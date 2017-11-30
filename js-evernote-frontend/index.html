@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src='src/notesList.js'></script>
+    <script type="text/javascript" src='src/note.js'></script>
+    <script type="text/javascript" src='src/adapter.js'></script>
+    <script type="text/javascript" src='src/index.js'></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      $('.visible.example .ui.sidebar')
+        .sidebar({
+          context: '.visible.example .bottom.segment'
+        })
+        .sidebar('hide')
+    </script>
+
+    <div class="ui bottom attached segment pushable">
+
+      <div id='side-bar' class="ui visible inverted left vertical sidebar menu">
+
+        <style>
+        #robot-img{
+          left: 20px
+        }
+        #new-note-btn{
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          left: 20x;
+        }
+
+        #home-button{
+          background-color: #4CBF55;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          left: 20x;
+        }
+        </style>
+
+      <div id='robot-img' class="item">
+          <img src="https://robohash.org/NOI.png?set=set2&size=150x150" alt="Smiley face">
+      </div>
+      <br>
+
+        <!-- <a class="item">
+          <i class="home icon"></i>
+              Home
+          </a>
+        <a class="item">
+          <i class="write icon" id=""></i>
+            Create New Note
+          </a>
+        <a class="item">
+          <i class="browser icon"></i>
+            All Your Notes
+          </a> -->
+
+          <button type="button" id="home-button">Home</button>
+          <button type="button" id="new-note-btn">New Note</button>
+
+          <ul id="notes-list">
+          </ul>
+
+      </div>
+
+      <div class="pusher">
+        <div class="ui basic segment">
+          <!-- <h3 class="ui header">Create a new note</h3> -->
+            <div class="new-note">
+              <form id="create-note">
+                <label>Title</label><br>
+                <input type="text" id="noteTitle"></input><br>
+                <label>Your note:</label><br>
+                <textarea id="noteBody"rows="12" cols="60" ></textarea><br><br>
+                <input type="submit" name="submit" id='submit-new-note' value="Create"></input>
+              </form>
+            </div>
+
+          <div id="home-img">
+            <img src="/src/future_world.jpg" alt="Smiley face" height=100% width=100%>
+          </div>
+
+          <div id="whole-notes">
+          </div>
+
+            <div id="editing-notes">
+            </div>
+
+
+            <div class="alert alert-success" id="success">
+              <h1><strong>Success!</strong></h1>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+  </body>
+</html>
