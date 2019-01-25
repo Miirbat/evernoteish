@@ -19,25 +19,21 @@ class Adapter {
       })
     })
     .then(response => response.json())
-    .then(function(data){
-      console.log(data.id)
-    })
     .then(callback)
     .catch(error => console.log(error))
   }
 
-  getOneNote(idizzle, callback){
+  getOneNote(id, callback){
     const url = "http://localhost:3000/api/v1/notes/"
-    fetch(url + idizzle)
+    fetch(url + id)
     .then(response => response.json())
     .then(callback)
     .catch(error => console.log(error))
   }
 
-  editNote(idizzle, noteTitle, noteBody, callback){
-    const url = `http://localhost:3000/api/v1/notes/${idizzle}`
+  editNote(id, noteTitle, noteBody, callback){
+    const url = `http://localhost:3000/api/v1/notes/${id}`
     fetch(url, {
-
       method: 'PATCH',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -54,13 +50,12 @@ class Adapter {
     .catch(error => console.log(error))
   }
 
-  deleteNote(idizzle, callback) {
-    const url = `http://localhost:3000/api/v1/notes/${idizzle}`
+  deleteNote(id, callback) {
+    const url = `http://localhost:3000/api/v1/notes/${id}`
     fetch(url, {
       method: 'DELETE'
     })
     .then(response => response.json())
     .then(callback)
   }
-
 }
